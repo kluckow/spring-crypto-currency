@@ -54,7 +54,6 @@ public class Application {
 						
 						// http://localhost:8080/crypto/add?name=euro&rank=1&price_usd=0.7&price_btc=20000
 						
-						// TODO: persist
 						CryptoCurrency newCrypto = new CryptoCurrency();
 						newCrypto.setName(crypto.getName());
 						newCrypto.setRank(crypto.getRank());
@@ -68,8 +67,8 @@ public class Application {
 			};
 
 			// TODO: make configurable
-//			timer.schedule (hourlyTask, 0l, 1000*60*60); // 1h
-			timer.schedule (hourlyTask, 0l, 1000*5); // 5sec 
+			timer.schedule (hourlyTask, 0l, 1000*60*60); // 1h
+//			timer.schedule (hourlyTask, 0l, 1000*5); // 5sec 
 		};
 	}
 }

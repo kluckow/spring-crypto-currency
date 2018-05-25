@@ -14,11 +14,10 @@ public class CryptoController {
 	@Autowired
 	private CryptoCurrencyRepository cryptoCurrencyRepository;
 	
-	@GetMapping(path="/add") // Map ONLY GET Requests
+	@GetMapping(path="/add")
 	public @ResponseBody String addNewCryptoCurrency (@RequestParam String name
 			, @RequestParam int rank, @RequestParam String price_usd, @RequestParam String price_btc) {
 		
-		// TODO: only add if not already existing
 		CryptoCurrency crypto = new CryptoCurrency();
 		crypto.setName(name);
 		crypto.setRank(rank);
@@ -30,7 +29,6 @@ public class CryptoController {
 	
 	@GetMapping(path="/all")
 	public @ResponseBody Iterable<CryptoCurrency> getAllUsers() {
-		// This returns a JSON or XML with the users
 		return cryptoCurrencyRepository.findAll();
 	}
 }
